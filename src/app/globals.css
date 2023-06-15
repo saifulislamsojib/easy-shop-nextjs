@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.main-slider .image-layer {
+  @apply bg-no-repeat bg-cover bg-center transition-transform duration-[5000ms] ease-in-out min-h-[800px];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.main-slider .swiper-slide-active .image-layer {
+  @apply scale-150 z-10;
+}
+
+.main-slider .image-layer::before {
+  @apply absolute top-0 left-0 bottom-0 right-0 content-[''] bg-[#1c0c0664] dark:bg-[#1c0c0690] z-0;
+}
+
+.main-slider .swiper-button-next,
+.main-slider .swiper-button-prev {
+  @apply absolute bg-white text-black w-12 h-12 rounded-full hidden sm:flex items-center justify-center;
+}
+
+[data-theme="dark"] .main-slider .swiper-button-next,
+[data-theme="dark"] .main-slider .swiper-button-prev {
+  @apply bg-[#2a303c] text-[#e2e2e2];
+}
+
+.main-slider .swiper-button-next::after,
+.main-slider .swiper-button-prev::after {
+  @apply text-2xl;
+}
+
+.main-slider .main-slider__details {
+  @apply invisible;
+}
+
+.main-slider .swiper-slide-active .main-slider__details {
+  @apply visible animate-[animate-slide_800ms_ease-in-out];
+  animation: animate-slide 800ms ease-in-out;
+}
+
+@keyframes animate-slide {
+  0% {
+    top: 150px;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  100% {
+    top: 50%;
+  }
 }
