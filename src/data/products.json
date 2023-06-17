@@ -1,0 +1,249 @@
+[
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50ec" },
+    "title": "Levi's 501 Jeans",
+    "categoryId": "616e68012f58f213a6745b1b",
+    "imageUrls": [
+      "/products/levis501_1.jpg",
+      "/products/levis501_2.jpg",
+      "/products/levis501_3.jpg"
+    ],
+    "price": { "$numberDouble": "69.99" },
+    "ratings": { "$numberDouble": "4.5" },
+    "features": [
+      "Classic straight leg fit",
+      "100% cotton denim",
+      "Button fly closure"
+    ],
+    "details": "Step up your style game with the iconic Levi's 501 Jeans. With their classic straight leg fit, 100% cotton denim, and button fly closure, these jeans offer timeless appeal and unmatched comfort.",
+    "brand": "Levi's"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50ed" },
+    "title": "Nike Air Max 270",
+    "categoryId": "616e68012f58f213a6745b1b",
+    "imageUrls": [
+      "/products/airmax270_1.jpg",
+      "/products/airmax270_2.jpg",
+      "/products/airmax270_3.jpg"
+    ],
+    "price": { "$numberDouble": "149.99" },
+    "ratings": { "$numberDouble": "4.7" },
+    "features": [
+      "Breathable mesh upper",
+      "Visible Max Air unit",
+      "Cushioned foam midsole"
+    ],
+    "details": "Experience ultimate comfort and style with the Nike Air Max 270 sneakers. Featuring a breathable mesh upper, visible Max Air unit for impact protection, and a cushioned foam midsole, these shoes provide all-day comfort.",
+    "brand": "Nike"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50ee" },
+    "title": "Breville Barista Express",
+    "categoryId": "616e68012f58f213a6745b1c",
+    "imageUrls": [
+      "/products/baristaexpress_1.jpg",
+      "/products/baristaexpress_2.jpg",
+      "/products/baristaexpress_3.jpg"
+    ],
+    "price": { "$numberInt": "699" },
+    "ratings": { "$numberDouble": "4.9" },
+    "features": [
+      "Built-in conical burr grinder",
+      "Precise espresso extraction",
+      "Steam wand for milk frothing"
+    ],
+    "details": "Indulge in the art of coffee-making with the Breville Barista Express. This espresso machine features a built-in conical burr grinder, precise espresso extraction, and a steam wand for milk frothing. Enjoy café-quality coffee at home.",
+    "brand": "Breville"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50ef" },
+    "title": "Sony PlayStation 5",
+    "categoryId": "616e68012f58f213a6745b1c",
+    "imageUrls": [
+      "/products/ps5_1.jpg",
+      "/products/ps5_2.jpg",
+      "/products/ps5_3.jpg"
+    ],
+    "price": { "$numberInt": "499" },
+    "ratings": { "$numberDouble": "4.8" },
+    "features": [
+      "Ultra-high-speed SSD",
+      "Ray tracing technology",
+      "DualSense wireless controller"
+    ],
+    "details": "Experience next-gen gaming with the Sony PlayStation 5. It features an ultra-high-speed SSD, ray tracing technology for realistic graphics, and a DualSense wireless controller for immersive gameplay. Get ready for a gaming revolution.",
+    "brand": "Sony"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f1" },
+    "title": "To Kill a Mockingbird",
+    "categoryId": "616e68012f58f213a6745b1d",
+    "imageUrls": [
+      "/products/tokillamockingbird_1.jpg",
+      "/products/tokillamockingbird_2.jpg",
+      "/products/tokillamockingbird_3.jpg"
+    ],
+    "price": { "$numberDouble": "12.99" },
+    "ratings": { "$numberDouble": "4.7" },
+    "features": [
+      "Classic coming-of-age story",
+      "Southern Gothic setting",
+      "Exploration of racism and injustice"
+    ],
+    "details": "Harper Lee's To Kill a Mockingbird is a timeless coming-of-age novel set in the Southern Gothic atmosphere. It delves into themes of racism, injustice, and the power of compassion. A must-read for all.",
+    "brand": "HarperCollins"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f0" },
+    "title": "The Great Gatsby",
+    "categoryId": "616e68012f58f213a6745b1d",
+    "imageUrls": [
+      "/products/greatgatsby_1.jpg",
+      "/products/greatgatsby_2.jpg",
+      "/products/greatgatsby_3.jpg"
+    ],
+    "price": { "$numberDouble": "9.99" },
+    "ratings": { "$numberDouble": "4.5" },
+    "features": [
+      "Classic American literature",
+      "1920s Jazz Age setting",
+      "Exploration of the American Dream"
+    ],
+    "details": "Immerse yourself in F. Scott Fitzgerald's classic novel, The Great Gatsby. Set in the vibrant 1920s Jazz Age, this masterpiece explores themes of love, wealth, and the elusive American Dream.",
+    "brand": "Penguin Books"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f3" },
+    "title": "Dumbbell Set",
+    "categoryId": "616e68012f58f213a6745b1e",
+    "imageUrls": [
+      "/products/dumbbellset_1.jpg",
+      "/products/dumbbellset_2.jpg",
+      "/products/dumbbellset_3.jpg"
+    ],
+    "price": { "$numberDouble": "79.99" },
+    "ratings": { "$numberDouble": "4.6" },
+    "features": [
+      "Versatile weight training",
+      "Durable and non-slip design",
+      "Adjustable weight options"
+    ],
+    "details": "Get in shape with this versatile dumbbell set. It offers a range of weight options for effective weight training, features a durable and non-slip design, and helps you achieve your fitness goals.",
+    "brand": "Fitness Gear"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f4" },
+    "title": "Yoga Mat",
+    "categoryId": "616e68012f58f213a6745b1e",
+    "imageUrls": [
+      "/products/yogamat_2.jpg",
+      "/products/yogamat_1.jpg",
+      "/products/yogamat_3.jpg"
+    ],
+    "price": { "$numberDouble": "29.99" },
+    "ratings": { "$numberDouble": "4.7" },
+    "features": [
+      "Non-slip and cushioned surface",
+      "Suitable for all types of yoga",
+      "Easy to clean and carry"
+    ],
+    "details": "Enhance your yoga practice with this high-quality yoga mat. Its non-slip and cushioned surface provides stability and comfort during your workouts. Easy to clean and carry, it's perfect for yogis of all levels.",
+    "brand": "Liforme"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f5" },
+    "title": "Resistance Bands",
+    "categoryId": "616e68012f58f213a6745b1e",
+    "imageUrls": [
+      "/products/resistancebands_1.jpg",
+      "/products/resistancebands_2.jpg",
+      "/products/resistancebands_3.jpg"
+    ],
+    "price": { "$numberDouble": "19.99" },
+    "ratings": { "$numberDouble": "4.4" },
+    "features": [
+      "Versatile strength training",
+      "Durable and stretchable material",
+      "Suitable for various exercises"
+    ],
+    "details": "Achieve your fitness goals with these versatile resistance bands. They offer a wide range of strength training exercises, are made from durable and stretchable material, and are suitable for various workouts.",
+    "brand": "Fit Simplify"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50e9" },
+    "title": "iPhone 13 Pro",
+    "categoryId": "616e68012f58f213a6745b1a",
+    "imageUrls": [
+      "/products/iphone13pro1.jpg",
+      "/products/iphone13pro2.jpg",
+      "/products/iphone13pro3.jpg"
+    ],
+    "price": { "$numberInt": "1099" },
+    "ratings": { "$numberDouble": "4.8" },
+    "features": [
+      "6.1-inch Super Retina XDR display",
+      "A15 Bionic chip",
+      "128GB storage"
+    ],
+    "details": "Experience the power of the iPhone 13 Pro with its 6.1-inch Super Retina XDR display, A15 Bionic chip, and 128GB storage. Capture stunning photos and enjoy smooth performance with this flagship device.",
+    "brand": "Apple"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50ea" },
+    "title": "Samsung Galaxy S21",
+    "categoryId": "616e68012f58f213a6745b1a",
+    "imageUrls": [
+      "/products/galaxys21_1.jpg",
+      "/products/galaxys21_2.jpg",
+      "/products/galaxys21_3.jpg"
+    ],
+    "price": { "$numberInt": "999" },
+    "ratings": { "$numberDouble": "4.7" },
+    "features": [
+      "Dynamic AMOLED 2X display",
+      "Exynos 2100 processor",
+      "256GB storage"
+    ],
+    "details": "Discover the stunning features of the Samsung Galaxy S21. It boasts a Dynamic AMOLED 2X display, powerful Exynos 2100 processor, and 256GB storage capacity. Enjoy a seamless smartphone experience with this flagship device.",
+    "brand": "Samsung"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50eb" },
+    "title": "Canon EOS R6",
+    "categoryId": "616e68012f58f213a6745b1a",
+    "imageUrls": [
+      "/products/eosr6_1.jpg",
+      "/products/eosr6_2.jpg",
+      "/products/eosr6_3.jpg"
+    ],
+    "price": { "$numberInt": "2499" },
+    "ratings": { "$numberDouble": "4.9" },
+    "features": [
+      "20.1MP full-frame CMOS sensor",
+      "4K video recording",
+      "In-body image stabilization"
+    ],
+    "details": "Unleash your creativity with the Canon EOS R6. It features a 20.1MP full-frame CMOS sensor, 4K video recording capabilities, and in-body image stabilization. Capture breathtaking photos and videos with this advanced mirrorless camera.",
+    "brand": "Canon"
+  },
+  {
+    "_id": { "$oid": "6464c6f1a2bd407882de50f2" },
+    "title": "The Da Vinci Code",
+    "categoryId": "616e68012f58f213a6745b1d",
+    "imageUrls": [
+      "/products/davincicode_1.jpg",
+      "/products/davincicode_2.jpg",
+      "/products/davincicode_3.jpg"
+    ],
+    "price": { "$numberDouble": "14.99" },
+    "ratings": { "$numberDouble": "4.3" },
+    "features": [
+      "Thrilling mystery",
+      "Symbolism and code-breaking",
+      "Art historical references"
+    ],
+    "details": "Embark on a thrilling adventure with Dan Brown's The Da Vinci Code. This gripping mystery weaves together symbolism, code-breaking, and art historical references. Uncover the secrets that lie within.",
+    "brand": "Doubleday"
+  }
+]
