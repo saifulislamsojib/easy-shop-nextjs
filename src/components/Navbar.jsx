@@ -36,7 +36,7 @@ const Navbar = () => {
       });
       await res.json();
       if (path.includes("/dashboard") || path.includes("/profile")) {
-        replace("/login");
+        replace(`/login?redirectUrl=${path}`);
       }
       toast.dismiss(toastId);
       toast.success("Successfully logout!");
