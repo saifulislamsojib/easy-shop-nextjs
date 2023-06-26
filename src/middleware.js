@@ -22,9 +22,8 @@ export const middleware = async (request) => {
     if (isPath("/login") || isPath("/signup")) {
       return NextResponse.next();
     }
-    return NextResponse.redirect(
-      new URL(`/login?redirectUrl=${pathname}`, request.url)
-    );
+    const url = new URL("/login", request.url);
+    return NextResponse.redirect(`${url.toString()}?redirectUrl=${pathname}`);
   }
 };
 
