@@ -27,9 +27,9 @@ const LoginForm = () => {
     try {
       await signIn(email, password);
       await createJWT({ email });
+      replace(from);
       toast.dismiss(toastId);
       toast.success("User signed in successfully");
-      replace(from);
       startTransition(() => {
         refresh();
       });

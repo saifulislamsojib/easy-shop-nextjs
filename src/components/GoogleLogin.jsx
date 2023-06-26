@@ -14,9 +14,9 @@ const GoogleLogin = ({ from }) => {
     try {
       const { user } = await googleLogin();
       await createJWT({ email: user.email });
+      replace(from);
       toast.dismiss(toastId);
       toast.success("User signed in successfully");
-      replace(from);
       startTransition(() => {
         refresh();
       });
