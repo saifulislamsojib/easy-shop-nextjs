@@ -13,9 +13,7 @@ export const middleware = async (request) => {
     const secret = new TextEncoder().encode(process.env.jwt_secret);
     await jwtVerify(cookie.split("Bearer ")[1], secret);
     if (isPath("/login") || isPath("/signup")) {
-      const { searchParams } = new URL(request.url);
-      const redirectUrl = searchParams.get("redirectUrl") || "/";
-      return NextResponse.redirect(new URL(redirectUrl, request.url));
+      return NextResponse.redirect(new URL("/", request.url));
     }
     return NextResponse.next();
   } catch (error) {
