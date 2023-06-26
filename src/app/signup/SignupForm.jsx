@@ -1,12 +1,13 @@
 "use client";
 
+import GoogleLogin from "@/components/GoogleLogin";
 import useAuth from "@/hooks/useAuth";
 import createJWT from "@/utils/createJWT";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { startTransition } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { FcGoogle } from "react-icons/fc";
 
 const SignupForm = () => {
   const {
@@ -17,10 +18,10 @@ const SignupForm = () => {
     setValue,
   } = useForm();
 
-  const { createUser, profileUpdate, googleLogin } = useAuth();
+  const { createUser, profileUpdate } = useAuth();
   const search = useSearchParams();
   const from = search.get("redirectUrl") || "/";
-  const { replace } = useRouter();
+  const { replace, refresh } = useRouter();
 
   const uploadImage = async (event) => {
     const formData = new FormData();
@@ -51,7 +52,7 @@ const SignupForm = () => {
     const { name, email, password, photo } = data;
     const toastId = toast.loading("Loading...");
     try {
-      const user = await createUser(email, password);
+      await createUser(email, password);
       await createJWT({ email });
       await profileUpdate({
         displayName: name,
@@ -60,20 +61,9 @@ const SignupForm = () => {
       toast.dismiss(toastId);
       toast.success("User signed in successfully");
       replace(from);
-    } catch (error) {
-      toast.dismiss(toastId);
-      toast.error(error.message || "User not signed in");
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    const toastId = toast.loading("Loading...");
-    try {
-      const { user } = await googleLogin();
-      await createJWT({ email: user.email });
-      toast.dismiss(toastId);
-      toast.success("User signed in successfully");
-      replace(from);
+      startTransition(() => {
+        refresh();
+      });
     } catch (error) {
       toast.dismiss(toastId);
       toast.error(error.message || "User not signed in");
@@ -188,13 +178,7 @@ const SignupForm = () => {
         </Link>
       </p>
       <div className="divider mt-5">OR</div>
-      <button
-        onClick={handleGoogleLogin}
-        type="button"
-        className="btn btn-primary mt-5 mx-auto"
-      >
-        <FcGoogle className="text-3xl mr-3" /> Continue with google
-      </button>
+      <GoogleLogin from={from} />
     </form>
   );
 };

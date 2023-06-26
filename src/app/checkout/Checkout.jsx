@@ -1,18 +1,22 @@
 "use client";
 
 import useCart from "@/hooks/useCart";
+import classNames from "@/utils/classNames";
 import { toast } from "react-hot-toast";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
 const Checkout = () => {
-  const { isLoading, mutate, cart } = useCart();
+  const { isLoading, mutate, cart, isValidating } = useCart();
 
   const handleCount = async (id, action) => {
+    if (isValidating) return;
+    const toastId = toast.loading("loading...");
     try {
       const res = await fetch(`/api/cart?id=${id}&action=${action}`, {
         method: "POST",
       });
       const result = await res.json();
+      toast.dismiss(toastId);
       if (result.added) {
         toast.success(result.message);
         mutate();
@@ -20,6 +24,7 @@ const Checkout = () => {
         toast.error(result.message);
       }
     } catch (error) {
+      toast.dismiss(toastId);
       console.log(error);
     }
   };
@@ -54,14 +59,20 @@ const Checkout = () => {
                 <td className="flex items-center justify-center">
                   <button
                     onClick={() => handleCount(_id, "plus")}
-                    className="btn btn-primary mr-3"
+                    className={classNames(
+                      "btn btn-primary mr-3",
+                      isValidating && "cursor-wait"
+                    )}
                   >
                     <AiOutlinePlus />
                   </button>
                   <span>{quantity}</span>
                   <button
                     onClick={() => handleCount(_id, "minus")}
-                    className="btn btn-secondary ml-3"
+                    className={classNames(
+                      "btn btn-secondary ml-3",
+                      isValidating && "cursor-wait"
+                    )}
                     disabled={quantity <= 1}
                   >
                     <AiOutlineMinus />

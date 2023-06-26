@@ -23,7 +23,7 @@ const RootLayout = ({ children }) => {
       <body
         className={classNames(
           roboto.variable,
-          "container mx-auto px-2 font-roboto"
+          "container mx-auto px-2 font-roboto lg:px-10"
         )}
       >
         <Providers>

@@ -7,7 +7,7 @@ import useTheme from "@/hooks/useTheme";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
+import { startTransition, useMemo, useState } from "react";
 import { toast } from "react-hot-toast";
 import NavLink from "./NavLink";
 
@@ -16,9 +16,8 @@ const Navbar = () => {
   const { uid, displayName, photoURL } = user || {};
 
   const navData = uid ? afterLoginNavData : beforeLoginNavData;
-
   const { theme, toggleTheme } = useTheme();
-  const { replace } = useRouter();
+  const { replace, refresh } = useRouter();
   const path = usePathname();
 
   const [navToggle, setNavToggle] = useState(false);
@@ -29,18 +28,24 @@ const Navbar = () => {
   );
 
   const handleLogout = async () => {
+    const toastId = toast.loading("Loading...");
     try {
       await logout();
       const res = await fetch("/api/auth/logout", {
         method: "POST",
       });
-      const data = await res.json();
-      toast.success("Successfully logout!");
+      await res.json();
       if (path.includes("/dashboard") || path.includes("/profile")) {
-        replace("/");
+        replace("/login");
       }
+      toast.dismiss(toastId);
+      toast.success("Successfully logout!");
+      startTransition(() => {
+        refresh();
+      });
     } catch (error) {
       toast.error("Successfully not logout!");
+      toast.dismiss(toastId);
     }
   };
 
@@ -87,7 +92,7 @@ const Navbar = () => {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item bg-primary">
+              <span className="badge badge-sm indicator-item bg-primary text-white dark:text-gray-300">
                 {cart.length}
               </span>
             </div>

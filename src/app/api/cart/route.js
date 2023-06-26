@@ -33,6 +33,7 @@ export const POST = async (request) => {
     if (!id) throw new Error("id not found");
     const cookie = cookies();
     let cart = {};
+    let res = { added: true, message: "added to cart" };
     if (cookie.get("cart")?.value) {
       cart = JSON.parse(cookie.get("cart")?.value);
       if (cart[id]) {
@@ -41,6 +42,7 @@ export const POST = async (request) => {
         } else if (action === "minus") {
           if (cart[id] <= 1) throw new Error("Minus must be greater than 1");
           cart[id] -= 1;
+          res.message = "Reduced from cart";
         } else {
           throw new Error("Already added to cart");
         }
@@ -50,14 +52,13 @@ export const POST = async (request) => {
     } else {
       cart[id] = 1;
     }
-    console.log(cart);
     cookie.set({
       name: "cart",
       value: JSON.stringify(cart),
       secure: true,
       httpOnly: true,
     });
-    return NextResponse.json({ added: true, message: "added to cart" });
+    return NextResponse.json(res);
   } catch (error) {
     return NextResponse.json({ added: false, message: error.message });
   }
