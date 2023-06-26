@@ -58,11 +58,11 @@ const SignupForm = () => {
         displayName: name,
         photoURL: photo,
       });
-      replace(from);
-      toast.dismiss(toastId);
-      toast.success("User signed in successfully");
       startTransition(() => {
         refresh();
+        replace(from);
+        toast.dismiss(toastId);
+        toast.success("User signed in successfully");
       });
     } catch (error) {
       toast.dismiss(toastId);
