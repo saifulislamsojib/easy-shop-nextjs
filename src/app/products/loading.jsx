@@ -5,7 +5,7 @@ const productsLoading = () => {
   return (
     <SkeletonTheme baseColor="#2a303c" highlightColor="#5c5c5c">
       <div className="mt-10">
-        <div className="grid grid-cols-3 gap-5 mb-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
           {[...Array(3).keys()].map((it) => (
             <div
               key={it}
